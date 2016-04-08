@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Lieder Project: Exploring Poetry and Music Through Computer-Assisted Statistical Modeling</title>
+
+		<meta name="description" content="The Lieder Project: Exploring Poetry and Music Through Computer-Assisted Statistical Modeling">
+		<meta name="author" content="Kris Shaffer, Ph.D. & Jordan Pyle">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="images/bletchley.jpg">
+					<h1>The Lieder Project</h1>
+					<h2>Exploring Poetry and Music<br/>Through Computer-Assisted Statistical Modeling
+</h2>
+					<br/>
+					<h3>Kris Shaffer, Ph.D. & Jordan Pyle<br/>CU–Boulder</h3>
+					<p>
+						<small><a href="http://kris.shaffermusic.com">kris.shaffermusic.com</a> / <a href="http://twitter.com/krisshaffer">@krisshaffer</a><br/><br/>view presentation at <a href="http://kris.shaffermusic.com/liederprojectpresentation">kris.shaffermusic.com/PublicScholar</a><br/>fork presentation at <a href="http://github.com/kshaffer/liederprojectpresentation">github.com/kshaffer/PublicScholar</a></small>
+					</p>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						<table>
+							<tr>
+								<td>
+									Heil'ge Nacht, du sinkest nieder;<br/>
+									Nieder wallen auch die Träume<br/>
+									Wie dein Licht durch die Räume,<br/>
+									Durch der Menschen stille Brust.<br/><br/>
+									Die belauschen sie mit Lust;<br/>
+									Rufen, wenn der Tag erwacht:<br/>
+									Kehre wieder, heil'ge Nacht!<br/>
+									Holde Träume, kehret wieder!<br/>
+								</small></td>
+							</tr>
+						</table>
+						<br/>
+						"Nacht und Träume," by Matthäus von Collin
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						Score of Nacht und Träume, mm. 4–9
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						<table>
+							<tr>
+								<td>
+									Heil'ge Nacht, du sinkest nieder;<br/>
+									Nieder wallen auch die Träume<br/>
+									Wie dein Licht durch die Räume,<br/>
+									Durch der Menschen stille Brust.<br/><br/>
+									Die belauschen sie mit Lust;<br/>
+									Rufen, wenn der Tag erwacht:<br/>
+									Kehre wieder, heil'ge Nacht!<br/>
+									Holde Träume, kehret wieder!<br/>
+								</small></td>
+							</tr>
+						</table>
+						<br/>
+						"Nacht und Träume," by Matthäus von Collin
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						Score, p. 2, top 2-3 systems.
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						<table>
+							<tr>
+								<td>
+									Heil'ge Nacht, du sinkest nieder;<br/>
+									Nieder wallen auch die Träume<br/>
+									Wie dein Licht durch die Räume,<br/>
+									Durch der Menschen stille Brust.<br/><br/>
+									Die belauschen sie mit Lust;<br/>
+									Rufen, wenn der Tag erwacht:<br/>
+									Kehre wieder, heil'ge Nacht!<br/>
+									Holde Träume, kehret wieder!<br/>
+								</small></td>
+							</tr>
+						</table>
+						<br/>
+						"Nacht und Träume," by Matthäus von Collin
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						Can we use software to identify songs worthy of a closer look?
+						<br/><br/>
+						Can we use software to learn about general trends in a large collection of songs?
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						- Create a corpus of phonetically encoded text and music
+						- Mathematically model what Stephen has already found
+						- Write software to search for those structures in the corpus
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						## Encoding the data
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						<table>
+							<tr>
+								<td style="font-size: 0.8em">
+									Heil'ge Nacht, du sinkest nieder;<br/>
+									Nieder wallen auch die Träume<br/>
+									Wie dein Licht durch die Räume,<br/>
+									Durch der Menschen stille Brust.<br/><br/>
+									Die belauschen sie mit Lust;<br/>
+									Rufen, wenn der Tag erwacht:<br/>
+									Kehre wieder, heil'ge Nacht!<br/>
+									Holde Träume, kehret wieder!<br/>
+								</small></td>
+								<td style="font-size: 0.8em">
+									'ha:Il.gə 'naχt du 'zIŋ.kəst 'ni.dəʁ<br/>
+									'ni.dəʁ 'va.lən 'a:ʊχ di 'trɔ:Y.mə<br/>
+									'vi da:In 'mont.lIçt 'dʊɾç di 'ɾɔ:Y.mə<br/>
+									'dʊɾç deʁ 'mɛn.ʃən 'ʃtI.lə 'bɾʊst<br/>
+									'di bə.'la:ʊ.ʃən 'zi mIt 'lʊst<br/>
+									'ɾu.fən 'vɛn deʁ 'tak ɛɾ.'vaχt<br/>
+									'ke.ɾə 'vi.dəʁ 'ha:I.lgə 'naχt<br/>
+									'hɔl.də 'tɾɔ:Y.mə 'ke.ɾət 'vi.dəʁ<br/>
+								</small></td>
+							</tr>
+						</table>
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						![](images/ipamusic.png)
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						## The statistical model
+					</script>
+				</section>
+
+			<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						<table>
+							<tr>
+								<td>
+									Heil'ge Nacht, du sinkest nieder;<br/>
+									Nieder wallen auch die Träume<br/>
+									Wie dein Licht durch die Räume,<br/>
+									Durch der Menschen stille, stille Brust.<br/><br/>
+									Die belauschen sie mit Lust;<br/>
+									Die belauschen sie mit Lust;<br/>
+									Rufen, wenn der Tag erwacht:<br/>
+									Kehre wieder, heil'ge Nacht!<br/>
+									Holde Träume, kehret wieder!<br/>
+									Holde Träume, kehret wieder!<br/>
+								</small></td>
+							</tr>
+						</table>
+					</script>
+				</section>
+
+
+				<section data-markdown data-background="images/bletchley.jpg">
+					<script type="text/template">
+						![](images/vowels.png)
+					</script>
+				</section>
+
+				<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							<table>
+								<tr>
+									<td>
+										Heil'ge Nacht, du sinkest nieder;<br/>
+										Nieder wallen auch die Träume<br/>
+										Wie dein Licht durch die Räume,<br/>
+										Durch der Menschen stille, stille Brust.<br/><br/>
+										Die belauschen sie mit Lust;<br/>
+										Die belauschen sie mit Lust;<br/>
+										Rufen, wenn der Tag erwacht:<br/>
+										Kehre wieder, heil'ge Nacht!<br/>
+										Holde Träume, kehret wieder!<br/>
+										Holde Träume, kehret wieder!<br/>
+									</small></td>
+								</tr>
+							</table>
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							![](images/nachtundtraume3d.png)
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							3D SPACE
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							![](images/nachtundtraumedistance.png)
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							![](images/corpusdistance.png)
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							## Z-normalization
+							<br/>
+
+							- What is the standard deviation for line-to-line distance in each individual song?<br/>
+							(the standard rate of change)
+							<br/><br/>
+							- Z-normalized distance = raw distance / standard devation<br/>
+							(how big a deal is the change in the context of the song)
+							<br/><br/>
+							- Z-normalized distance allows us to interpret contextually and compare globally
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+						<script type="text/template">
+							![](images/corpusdistancez.png)
+						</script>
+					</section>
+
+					<section data-markdown data-background="images/bletchley.jpg">
+							<script type="text/template">
+								<table>
+									<tr>
+										<td>
+											Den Morgenwinden möcht ich's hauchen ein,<br/>
+											Ich möcht es säuseln durch den regen Hain;<br/>
+											Oh, leuchtet' es aus jedem Blumenstern!<br/>
+											Trüg es der Duft zu ihr von nah und fern!<br/>
+											Ihr Wogen, könnt ihr nichts als Räder treiben?<br/>
+											Dein ist mein Herz und soll es ewig bleiben.
+										</small></td>
+									</tr>
+								</table><br/>
+								"Ungeduld," by Wilhelm Müller<br/>
+								Stanza 3
+							</script>
+						</section>
+
+						<section data-markdown data-background="images/bletchley.jpg">
+							<script type="text/template">
+								![](images/ungeduldscore.png)
+							</script>
+						</section>
+
+						<section data-markdown data-background="images/bletchley.jpg">
+							<script type="text/template">
+								![](images/corpusdistance.png)
+							</script>
+						</section>
+
+						<section data-markdown data-background="images/bletchley.jpg">
+								<script type="text/template">
+									<table>
+										<tr>
+											<td>
+												Ach Bächlein, liebes Bächlein,<br/>
+												Du meinst es so gut;<br/>
+												Ach Bächlein, aber weißt du,<br/>
+												Wie Liebe tut?<br/>
+												Ach unten, da unten<br/>
+												Die kühle Ruh!<br/>
+												Ach Bächlein, liebes Bächlein,<br/>
+												So singe nur zu.
+											</small></td>
+										</tr>
+									</table><br/>
+									"Der Müller und der Bach," by Wilhelm Müller<br/>
+									Stanza 3
+								</script>
+							</section>
+
+							<section data-markdown data-background="images/bletchley.jpg">
+								<script type="text/template">
+									![](images/dmudbscore.png)
+								</script>
+							</section>
+
+
+
+
+
+			</div>
+
+		</div>
+
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
